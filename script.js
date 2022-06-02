@@ -44,13 +44,13 @@ const darkTheme = function () {
 if (theme === "dark") darkTheme();
 
 const showTransactionPanel = function () {
-  transactionPanel.classList.add("fade-in");
+  transactionPanel.classList.remove("hidden");
 };
 
 const hideTransactionPanel = function () {
   transactionPanel.classList.add("fade-out");
   setTimeout(() => {
-    transactionPanel.classList.remove("fade-in");
+    transactionPanel.classList.add("hidden");
     transactionPanel.classList.remove("fade-out");
   }, 500);
 
