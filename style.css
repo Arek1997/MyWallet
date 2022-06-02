@@ -15,6 +15,7 @@ body {
   font-family: "Montserrat", sans-serif;
   color: var(--second-color);
   background-color: var(--first-color);
+  transition: color 0.5s, background-color 0.5s;
 }
 
 header {
