@@ -112,14 +112,8 @@ const showError = function () {
 const deleteTransaction = function (e) {
   if (!e.target.classList.contains("fa-times")) return;
 
-  const money = e.target
-    .closest(".transaction-amount")
-    .textContent.slice(
-      0,
-      e.target.closest(".transaction-amount").textContent.indexOf("z")
-    );
-
-  cash -= +money;
+  const money = parseFloat(e.target.closest(".transaction-amount").textContent);
+  cash -= money;
   availableMoney.textContent = cash.toFixed(2);
   e.target.closest(".transaction").remove();
 };
