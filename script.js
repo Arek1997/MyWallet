@@ -59,15 +59,15 @@ const hideTransactionPanel = function () {
 
 const checkForm = function () {
   if (
-    !letter.test(inputName.value) ||
-    inputAmount.value === "" ||
-    inputCategory.value === "none"
+    letter.test(inputName.value) &&
+    inputAmount.value !== "" &&
+    inputCategory.value !== "none"
   ) {
-    showError();
-  } else {
     updateWalletMoney();
     saveTransaction();
     hideTransactionPanel();
+  } else {
+    showError();
   }
 };
 
