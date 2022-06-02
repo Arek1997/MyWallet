@@ -88,7 +88,9 @@ const saveTransaction = function () {
   const html = `
                 <div class="transaction">
                     <p class="transaction-name">${icon}${inputName.value}</p>
-                    <p class="transaction-amount">${inputAmount.value}zł <button class="delete"><i class="fas fa-times"></i></button></p>
+                    <p class="transaction-amount">${(+inputAmount.value).toFixed(
+                      2
+                    )}zł <button class="delete"><i class="fas fa-times"></i></button></p>
                 </div>
     `;
 
@@ -99,7 +101,7 @@ const saveTransaction = function () {
 
 const updateWalletMoney = function () {
   cash += +inputAmount.value;
-  availableMoney.textContent = cash;
+  availableMoney.textContent = cash.toFixed(2);
 };
 
 const showError = function () {
@@ -118,7 +120,7 @@ const deleteTransaction = function (e) {
     );
 
   cash -= +money;
-  availableMoney.textContent = cash;
+  availableMoney.textContent = cash.toFixed(2);
   e.target.closest(".transaction").remove();
 };
 
